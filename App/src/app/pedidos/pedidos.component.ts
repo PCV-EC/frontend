@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Pedido} from "../pedido";
+import {PEDIDOS} from '../mock-pedidos';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,12 +8,7 @@ import {Pedido} from "../pedido";
 })
 export class PedidosComponent implements OnInit {
 
-  pedido: Pedido = {
-    idPedido: 1,
-    itemsCompradosPedido: ["Churrasco", "Combo5", "Jugo de Guanabana"],
-    valorTotalCompraPedido: 17.43,
-    estadoPedido: "solicitado"
-  };
+  pedidos = PEDIDOS;
 
   constructor() {
   }

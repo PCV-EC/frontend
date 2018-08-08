@@ -1,8 +1,22 @@
-<h2>Detalle del Pedido</h2>
+<!--<h2>Detalle del Pedido</h2>
 <div><span>Items: </span>
   <ul>
     <li *ngFor="let item of pedido.itemsCompradosPedido">{{item}}</li>
   </ul>
 </div>
 <div><span>Valor a Cancelar: </span>{{pedido.valorTotalCompraPedido}}</div>
-<div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>
+<div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>-->
+
+<h1>Pedidos</h1>
+<ul class="heroes">
+  <li *ngFor="let pedido of pedidos">
+    <h2>Detalle del Pedido</h2>
+    <div><span>Items: </span>
+      <ul>
+        <li *ngFor="let item of pedido.itemsCompradosPedido">{{item}}</li>
+      </ul>
+    </div>
+    <div><span>Valor a Cancelar: </span>{{pedido.valorTotalCompraPedido}}</div>
+    <div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>
+  </li>
+</ul>
