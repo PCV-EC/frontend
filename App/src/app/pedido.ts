@@ -1,6 +1,6 @@
 export class Pedido {
   idPedido: number;
-  itemsCompradosPedido: string;
+  itemsCompradosPedido: string[];
   valorTotalCompraPedido: number;
   estadoPedido: string;
 }

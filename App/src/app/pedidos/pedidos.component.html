@@ -1,3 +1,8 @@
-<p>
-  pedidos works!
-</p>
+<h2>Detalle del Pedido</h2>
+<div><span>Items: </span>
+  <ul>
+    <li *ngFor="let item of pedido.itemsCompradosPedido">{{item}}</li>
+  </ul>
+</div>
+<div><span>Valor a Cancelar: </span>{{pedido.valorTotalCompraPedido}}</div>
+<div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Pedido} from "../pedido";
 
 @Component({
   selector: 'app-pedidos',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor() { }
+  pedido: Pedido = {
+    idPedido: 1,
+    itemsCompradosPedido: ["Churrasco", "Combo5", "Jugo de Guanabana"],
+    valorTotalCompraPedido: 17.43,
+    estadoPedido: "solicitado"
+  };
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
