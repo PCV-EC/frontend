@@ -1,22 +1,20 @@
-<!--<h2>Detalle del Pedido</h2>
-<div><span>Items: </span>
-  <ul>
-    <li *ngFor="let item of pedido.itemsCompradosPedido">{{item}}</li>
-  </ul>
-</div>
-<div><span>Valor a Cancelar: </span>{{pedido.valorTotalCompraPedido}}</div>
-<div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>-->
-
 <h1>Pedidos</h1>
-<ul class="heroes">
-  <li *ngFor="let pedido of pedidos">
-    <h2>Detalle del Pedido</h2>
-    <div><span>Items: </span>
-      <ul>
-        <li *ngFor="let item of pedido.itemsCompradosPedido">{{item}}</li>
+<ul>
+  <li
+    class="card mb-3"
+    style="width: 25rem"
+    *ngFor="let pedido of pedidos"
+    [class.seleccionado]="pedido === pedidoSeleccionado"
+    (click)="onSelect(pedido)">
+    <div class="card-body">
+      <h4 class="card-title">Pedido {{pedido.idPedido}}</h4>
+      <p class="card-text">Items: </p>
+      <ul class="list-group list-group-flush">
+        <li
+          class="list-group-item"
+          *ngFor="let item of pedido.itemsCompradosPedido">{{item}}
+        </li>
       </ul>
     </div>
-    <div><span>Valor a Cancelar: </span>{{pedido.valorTotalCompraPedido}}</div>
-    <div><span>Estado del Pedido: </span>{{pedido.estadoPedido}}</div>
   </li>
 </ul>
