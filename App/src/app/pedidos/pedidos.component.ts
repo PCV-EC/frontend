@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PEDIDOS} from '../mock-pedidos';
+import {PedidoService} from "../pedido.service";
 import {Pedido} from "../pedido";
 
 @Component({
@@ -9,7 +9,7 @@ import {Pedido} from "../pedido";
 })
 export class PedidosComponent implements OnInit {
 
-  pedidos = PEDIDOS;
+  pedidos: Pedido[];
 
   pedidoSeleccionado: Pedido;
 
@@ -18,10 +18,16 @@ export class PedidosComponent implements OnInit {
     console.log(this.pedidoSeleccionado);
   }
 
-  constructor() {
+  constructor(private pedidoService: PedidoService) {
   }
 
   ngOnInit() {
+    this.obtenerPedidos();
+  }
+
+  obtenerPedidos(): void {
+    this.pedidoService.obtenerPedidos()
+      .subscribe(pedidos => this.pedidos = pedidos);
   }
 
 }
