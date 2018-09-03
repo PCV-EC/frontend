@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Pedido} from '../pedido';
+import {PedidoService} from "../pedido.service";
 
 @Component({
   selector: 'app-pagina-inicio',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaInicioComponent implements OnInit {
 
-  accion = "Pedido";
+  pedidos: Pedido[] = [];
 
-  constructor() { }
+  constructor(private pedidoService: PedidoService) { }
 
   ngOnInit() {
+    this.obtenerPedidos();
+  }
+
+  obtenerPedidos(): void {
+    this.pedidoService.obtenerPedidos()
+      .subscribe(pedidos => this.pedidos = pedidos.slice(1, 3));
   }
 
 }

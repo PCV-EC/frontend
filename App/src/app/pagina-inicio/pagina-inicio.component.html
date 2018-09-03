@@ -1,1 +1,9 @@
-{{accion}}
+<h3>Página Principal</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let pedido of pedidos" class="col-1-4"
+  routerLink="/detalle/{{pedido.idPedido}}">
+    <div class="module hero">
+      <h4>{{pedido.idPedido}}</h4>
+    </div>
+  </a>
+</div>
