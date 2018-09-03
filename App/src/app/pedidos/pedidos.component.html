@@ -3,20 +3,18 @@
   <li
     class="card mb-3"
     style="width: 25rem"
-    *ngFor="let pedido of pedidos"
-    [class.seleccionado]="pedido === pedidoSeleccionado"
-    (click)="onSelect(pedido)">
-    <div class="card-body">
-      <h4 class="card-title">Pedido {{pedido.idPedido}}</h4>
-      <p class="card-text">Items: </p>
-      <ul class="list-group list-group-flush">
-        <li
-          class="list-group-item"
-          *ngFor="let item of pedido.itemsCompradosPedido">{{item}}
-        </li>
-      </ul>
-    </div>
+    *ngFor="let pedido of pedidos">
+    <a routerLink="/detalle/{{pedido.idPedido}}">
+      <div class="card-body">
+        <h4 class="card-title">Pedido {{pedido.idPedido}}</h4>
+        <p class="card-text">Items: </p>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item"
+            *ngFor="let item of pedido.itemsCompradosPedido">{{item}}
+          </li>
+        </ul>
+      </div>
+    </a>
   </li>
 </ul>
-
-<app-detalle-pedido [pedido]="pedidoSeleccionado"></app-detalle-pedido>

@@ -11,13 +11,6 @@ export class PedidosComponent implements OnInit {
 
   pedidos: Pedido[];
 
-  pedidoSeleccionado: Pedido;
-
-  onSelect(pedido: Pedido): void {
-    this.pedidoSeleccionado = pedido;
-    console.log(this.pedidoSeleccionado);
-  }
-
   constructor(private pedidoService: PedidoService) {
   }
 
